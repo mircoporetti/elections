@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elections
+  labels:
+    app: elections
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: elections
+  template:
+    metadata:
+      labels:
+        app: elections
+    spec:
+      containers:
+        - name: elections-container
+          image: $CI_REGISTRY/gitlab-mirco/elections:$CI_COMMIT_SHA
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: production
+      imagePullSecrets:
+        - name: gitlab-registry-secret
