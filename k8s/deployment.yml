@@ -22,5 +22,15 @@ spec:
           env:
             - name: NODE_ENV
               value: production
+            - name: API_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: basic-auth-credentials
+                  key: username
+            - name: API_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: basic-auth-credentials
+                  key: password
       imagePullSecrets:
         - name: gitlab-registry-secret
