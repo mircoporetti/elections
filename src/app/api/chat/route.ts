@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
     try {
-        const { query } = await req.json();
+        const { history, query } = await req.json();
 
         const API_BASE_URL = process.env.apiBaseUrl;
         const API_USERNAME = process.env.API_USERNAME;
@@ -15,7 +15,7 @@ export async function POST(req: Request) {
                 'Content-Type': 'application/json',
                 'Authorization': `Basic ${encodedCredentials}`,
             },
-            body: JSON.stringify({ query }),
+            body: JSON.stringify({ history, query }),
         });
 
         const data = await response.json();
