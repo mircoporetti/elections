@@ -1,6 +1,7 @@
 'use client';
 
 import React, {useEffect, useRef, useState} from 'react';
+import {ArrowUpIcon} from "@heroicons/react/16/solid";
 
 export default function Chat() {
 
@@ -85,9 +86,11 @@ export default function Chat() {
     return (
         <div className="h-screen flex flex-col">
             {errorScreen && (
-                <div className="error-screen mx-auto max-w-3xl w-full bg-red-600 p-4 rounded-lg flex items-center justify-between shadow-lg">
+                <div
+                    className="error-screen mx-auto max-w-3xl w-full bg-red-600 p-4 rounded-lg flex items-center justify-between shadow-lg">
                     <span className="flex-1">{errorScreen}</span>
-                    <button onClick={handleCloseError} className="text-white font-bold px-2 py-1 bg-transparent rounded-full hover:bg-red-700 transition">
+                    <button onClick={handleCloseError}
+                            className="text-white font-bold px-2 py-1 bg-transparent rounded-full hover:bg-red-700 transition">
                         X
                     </button>
                 </div>
@@ -103,7 +106,8 @@ export default function Chat() {
                             <p className="text-sm">Ask me anything about the official German parties&apos; programs for
                                 elections and
                                 I will answer with the info taken from the official manifests!</p><p>
-                            <b>IMPORTANT:</b> Please mention only one of the following parties at a time : CDU, SPD, AFD, FDP, DL, DGR, BSW. Currently, I
+                            <b>IMPORTANT:</b> Please mention only one of the following parties at a time : CDU, SPD,
+                            AFD, FDP, DL, DGR, BSW. Currently, I
                             can&apos;t handle multiple parties in the same question.</p>
                         </div>
                     </div>
@@ -128,14 +132,22 @@ export default function Chat() {
             </div>
 
             <form className="w-full max-w-3xl mx-auto p-4 pb-10" onSubmit={handleSubmit}>
-                <input
-                    ref={inputRef}
-                    className="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl p-2 shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600"
-                    value={input}
-                    placeholder="Ask something..."
-                    onChange={handleInputChange}
-                    style={{height: '6rem', backgroundColor: "#f5f4f3"}}
-                />
+                <div className="flex w-full items-center relative">
+                    <input
+                        ref={inputRef}
+                        className="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl p-2 shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600"
+                        value={input}
+                        placeholder="Ask something..."
+                        onChange={handleInputChange}
+                        style={{height: '6rem', backgroundColor: "#f5f4f3"}}
+                    />
+                    <button
+                        type="submit"
+                        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black text-white rounded-full p-3 shadow focus:outline-none"
+                    >
+                        <ArrowUpIcon className="h-6 w-6 text-white"/>
+                    </button>
+                </div>
             </form>
         </div>
     );
