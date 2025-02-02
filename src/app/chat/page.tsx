@@ -44,8 +44,8 @@ export default function Chat() {
         e.preventDefault();
 
         const userMessage = {role: 'You', content: input};
-        const updatedMessages = [...messages, userMessage];
-        setMessages(updatedMessages);
+        const chatHistory = [...messages, userMessage];
+        setMessages(chatHistory);
         setInput('');
         setIsLoading(true);
         try {
@@ -54,7 +54,7 @@ export default function Chat() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({query: input}),
+                body: JSON.stringify({history: chatHistory, query: input}),
             });
 
             let data
@@ -73,7 +73,7 @@ export default function Chat() {
             if(data){
                 setErrorScreen('');
                 const botMessage = {role: 'AI', content: String(data)};
-                setMessages([...updatedMessages, botMessage]);
+                setMessages([...chatHistory, botMessage]);
             }
 
         } catch (error) {
