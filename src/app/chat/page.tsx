@@ -17,7 +17,7 @@ export default function Chat() {
     const [errorScreen, setErrorScreen] = useState<string | null>(null);
 
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
-    const inputRef = useRef<HTMLInputElement>(null);
+    const inputRef = useRef<HTMLTextAreaElement>(null);
 
     const scrollToBottom = () => {
         if (messagesEndRef.current) {
@@ -36,7 +36,7 @@ export default function Chat() {
         setErrorScreen('');
     };
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setInput(e.target.value);
     };
 
@@ -133,11 +133,11 @@ export default function Chat() {
 
             <form className="w-full max-w-3xl mx-auto p-4 pb-10" onSubmit={handleSubmit}>
                 <div className="flex w-full items-center relative">
-                    <input
+                    <textarea
                         ref={inputRef}
-                        className="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl p-2 shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600"
+                        className="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl p-2 pr-14 shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600 resize-none"
                         value={input}
-                        placeholder="Ask something..."
+                        placeholder="Ask a question..."
                         onChange={handleInputChange}
                         style={{height: '6rem', backgroundColor: "#f5f4f3"}}
                     />
