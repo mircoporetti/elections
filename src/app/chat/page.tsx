@@ -54,7 +54,7 @@ export default function Chat() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({history: chatHistory, query: input}),
+                body: JSON.stringify({history: chatHistory, question: input}),
             });
 
             let data
