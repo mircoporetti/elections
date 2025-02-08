@@ -20,7 +20,7 @@ const Messaging: React.FC<MessagingProps> = ({messages, isLoading}) => {
                         className={`whitespace-pre-wrap p-5 rounded-lg shadow ${
                             message.role === 'You'
                                 ? 'bg-blue-100 dark:bg-gray-600 text-right text-black dark:text-white ml-auto max-w-max'
-                                : 'bg-gray-50 dark:bg-gray-800 text-left mr-auto max-w-full'
+                                : 'bg-gray-50 dark:bg-gray-800 text-left mr-auto max-w-full text-black dark:text-white'
                         }`}
                     >
                         <div className="font-bold">{message.role}</div>
@@ -32,9 +32,9 @@ const Messaging: React.FC<MessagingProps> = ({messages, isLoading}) => {
             </div>
             {isLoading && (
                 <div className="flex flex-col mx-auto mt-4t">
-                    <div className="font-bold">AI</div>
+                    <div className="font-bold text-black dark:text-white">AI</div>
                     <div
-                        className="pt-2 border-4 border-t-4 border-gray-600 border-dotted w-8 h-8 rounded-full animate-spin mt-2 self-start"></div>
+                        className="pt-2 border-4 border-t-4 border-gray-600 dark:border-white border-dotted w-8 h-8 rounded-full animate-spin mt-2 self-start"></div>
                 </div>
             )}
         </>

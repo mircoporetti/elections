@@ -5,6 +5,7 @@ import {ArrowUpIcon} from "@heroicons/react/16/solid";
 import PartiesSection from "../components/PartiesSection";
 import Intro from "../components/Intro";
 import MessagesSection from "../components/Messaging";
+import DarkModeToggle from "../components/DarkModeToggle";
 
 export default function Chat() {
 
@@ -87,7 +88,7 @@ export default function Chat() {
     };
 
     return (
-        <div className="h-screen flex flex-col">
+        <div className="h-screen flex flex-col bg-white dark:bg-gray-700">
             {errorScreen && (
                 <div
                     className="error-screen mx-auto max-w-3xl w-full bg-red-600 p-4 rounded-lg flex items-center justify-between shadow-lg">
@@ -99,7 +100,8 @@ export default function Chat() {
                 </div>
             )}
             <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
-                <div className="max-w-4xl mx-auto px-4 py-6 space-y-4 pb-2 pl-5 pr-5 md:pl-28 md:pr-28">
+                <div
+                    className="max-w-4xl mx-auto px-4 max-[380px]:py-4 py-6 space-y-4 pb-2 pl-5 pr-5 md:pl-28 md:pr-28">
                     {!messages.length && <Intro/>}
                     <div className="max-[950px]:landscape:mt-0 mt-5 mb-5 md:mb-5 sticky top-0">
                         <PartiesSection onlyTags={messages.length > 0}/>
@@ -111,30 +113,41 @@ export default function Chat() {
             <div>
                 <form
                     className="w-full max-w-3xl mx-auto max-[380px]:pl-6 max-[380px]:pr-6 pl-4 pr-4 max-[380px]:pb-4 pb-8 sm:pb-10 max-[950px]:landscape:pb-3"
-                    onSubmit={handleSubmit}>
-                    {messages.length == 0 && <div className="text-center dark:text-white max-[380px]:pb-2 pb-6 sm:pb-8">
-                        <h2 className="font-bold max-[380px]:text-sm text-lg md:text-xl"> Ask Away!</h2>
-                    </div>}
+                    onSubmit={handleSubmit}
+                >
+                    {messages.length == 0 && (
+                        <div className="text-center text-black dark:text-white max-[380px]:pb-2 pb-6 sm:pb-8">
+                            <h2 className="font-bold max-[380px]:text-sm text-lg md:text-xl"> Ask Away!</h2>
+                        </div>
+                    )}
                     <div className="flex w-full items-center relative">
-                    <textarea
-                        ref={inputRef}
-                        className="max-[950px]:landscape:h-10 w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-3xl p-2 pr-14 shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600 resize-none"
-                        value={input}
-                        placeholder="Type your own question here"
-                        onChange={handleInputChange}
-                    />
+                        <textarea
+                            ref={inputRef}
+                            className="max-[950px]:landscape:h-10 w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-3xl p-2 pr-14 shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600 resize-none"
+                            value={input}
+                            placeholder="Type your own question here"
+                            onChange={handleInputChange}
+                        />
                         <button
                             type="submit"
                             className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white text-white rounded-full p-3 max-[950px]:landscape:p-2 shadow focus:outline-none"
                         >
                             <ArrowUpIcon
-                                className="h-6 w-6 max-[950px]:landscape:h-4 max-[950px]:landscape:w-4 text-gray-400 dark:text-gray-700"/>
+                                className="h-6 w-6 max-[950px]:landscape:h-4 max-[950px]:landscape:w-4 text-gray-400 dark:text-gray-700"
+                            />
                         </button>
                     </div>
-                    <div className="text-center dark:text-white max-[950px]:landscape:pt-3 pt-6">
-                        <p className="text-xs"> Polly Tix can make mistakes.</p>
+                    <div
+                        className="flex w-full items-center justify-between text-center dark:text-white max-[950px]:landscape:pt-3 pt-5">
+                        <p className="text-xs text-left mx-auto pl-20">Polly Tix can make
+                            mistakes.</p>
+                        <div className="ml-4">
+                            <DarkModeToggle/>
+                        </div>
                     </div>
                 </form>
+
+
             </div>
         </div>
     );
