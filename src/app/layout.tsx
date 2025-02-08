@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Polly Tix",
-  description: "Elections? Ask Polly Tix, your AI helper",
+  title: "Poll-E",
+  description: "Elections? Ask Poll-E, your AI helper",
 };
 
 export default function RootLayout({

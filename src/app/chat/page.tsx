@@ -138,16 +138,14 @@ export default function Chat() {
                         </button>
                     </div>
                     <div
-                        className="flex w-full items-center justify-between text-center dark:text-white max-[950px]:landscape:pt-3 pt-5">
-                        <p className="text-xs text-left mx-auto pl-20">Polly Tix can make
+                        className="flex w-full items-center justify-between text-center tex-black dark:text-white max-[950px]:landscape:pt-3 pt-5">
+                        <p className="text-xs text-left mx-auto pl-20">Poll-E can make
                             mistakes.</p>
                         <div className="ml-4">
                             <DarkModeToggle/>
                         </div>
                     </div>
                 </form>
-
-
             </div>
         </div>
     );
