@@ -2,6 +2,9 @@
 
 import React, {useEffect, useRef, useState} from 'react';
 import {ArrowUpIcon} from "@heroicons/react/16/solid";
+import PartiesSection from "../components/PartiesSection";
+import Intro from "../components/Intro";
+import MessagesSection from "../components/Messaging";
 
 export default function Chat() {
 
@@ -70,7 +73,7 @@ export default function Chat() {
                 const json = await response.json();
                 data = json['answer'];
             }
-            if(data){
+            if (data) {
                 setErrorScreen('');
                 const botMessage = {role: 'AI', content: String(data)};
                 setMessages([...chatHistory, botMessage]);
@@ -95,60 +98,44 @@ export default function Chat() {
                     </button>
                 </div>
             )}
-
-            <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300 ">
-                <div className="max-w-3xl mx-auto px-4 py-6 space-y-4">
-                    <div
-                        className="flex justify-center items-center p-6 bg-gray-100 dark:bg-gray-700 rounded-2xl sticky top-0 z-10 border-b-8 border-white">
-                        <div className="text-center text-gray-800 dark:text-white">
-                            <h2 className="font-bold text-xl mb-4">🇩🇪 Welcome to Bundestag 2025 Elections AI
-                                Chatbot! 🇩🇪</h2>
-                            <p className="text-sm">Ask me anything about the official German parties&apos; programs for
-                                elections and
-                                I will answer with the info taken from the official manifests!</p><p>
-                            <b>IMPORTANT:</b> Please mention only one of the following parties at a time : CDU, SPD,
-                            AFD, FDP, DL, DGR, BSW. Currently, I
-                            can&apos;t handle multiple parties in the same question.</p>
-                        </div>
+            <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
+                <div className="max-w-4xl mx-auto px-4 py-6 space-y-4 pb-2 pl-5 pr-5 md:pl-28 md:pr-28">
+                    {!messages.length && <Intro/>}
+                    <div className="max-[950px]:landscape:mt-0 mt-5 mb-5 md:mb-5 sticky top-0">
+                        <PartiesSection onlyTags={messages.length > 0}/>
                     </div>
-                    {messages.map((message, index) => (
-                        <div
-                            key={index}
-                            className={`whitespace-pre-wrap p-4 rounded-lg shadow ${message.role === 'You' ? 'bg-blue-100 text-right ml-auto max-w-max' : 'bg-gray-50 dark:bg-gray-700 text-left mr-auto max-w-full'}`}
-                        >
-                            <div className="font-bold">{message.role}</div>
-                            <p className="break-words text-left">{message.content}</p>
-                        </div>
-                    ))}
-                    {isLoading && (
-                        <div className="flex flex-col mx-auto mt-4">
-                            <div className="font-bold">AI</div>
-                            <div
-                                className="pt-2 border-4 border-t-4 border-gray-600 border-dotted w-8 h-8 rounded-full animate-spin mt-2 self-start"></div>
-                        </div>
-                    )}
+                    <MessagesSection messages={messages} isLoading={isLoading}/>
                     <div ref={messagesEndRef}></div>
                 </div>
             </div>
-
-            <form className="w-full max-w-3xl mx-auto p-4 pb-10" onSubmit={handleSubmit}>
-                <div className="flex w-full items-center relative">
+            <div>
+                <form
+                    className="w-full max-w-3xl mx-auto max-[380px]:pl-6 max-[380px]:pr-6 pl-4 pr-4 max-[380px]:pb-4 pb-8 sm:pb-10 max-[950px]:landscape:pb-3"
+                    onSubmit={handleSubmit}>
+                    {messages.length == 0 && <div className="text-center dark:text-white max-[380px]:pb-2 pb-6 sm:pb-8">
+                        <h2 className="font-bold max-[380px]:text-sm text-lg md:text-xl"> Ask Away!</h2>
+                    </div>}
+                    <div className="flex w-full items-center relative">
                     <textarea
                         ref={inputRef}
-                        className="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-2xl p-2 pr-14 shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600 resize-none"
+                        className="max-[950px]:landscape:h-10 w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-3xl p-2 pr-14 shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600 resize-none"
                         value={input}
-                        placeholder="Ask a question..."
+                        placeholder="Type your own question here"
                         onChange={handleInputChange}
-                        style={{height: '6rem', backgroundColor: "#f5f4f3"}}
                     />
-                    <button
-                        type="submit"
-                        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black text-white rounded-full p-3 shadow focus:outline-none"
-                    >
-                        <ArrowUpIcon className="h-6 w-6 text-white"/>
-                    </button>
-                </div>
-            </form>
+                        <button
+                            type="submit"
+                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white text-white rounded-full p-3 max-[950px]:landscape:p-2 shadow focus:outline-none"
+                        >
+                            <ArrowUpIcon
+                                className="h-6 w-6 max-[950px]:landscape:h-4 max-[950px]:landscape:w-4 text-gray-400 dark:text-gray-700"/>
+                        </button>
+                    </div>
+                    <div className="text-center dark:text-white max-[950px]:landscape:pt-3 pt-6">
+                        <p className="text-xs"> Polly Tix can make mistakes.</p>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }
