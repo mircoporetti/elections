@@ -33,7 +33,9 @@ export default function Chat() {
         if (inputRef.current) {
             inputRef.current?.focus();
         }
-        scrollToBottom();
+        if (messages.length > 0) {
+            scrollToBottom();
+        }
     }, [messages]);
 
     const handleCloseError = () => {
