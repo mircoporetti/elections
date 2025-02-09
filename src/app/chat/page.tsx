@@ -6,28 +6,14 @@ import PartiesSection from "../components/PartiesSection";
 import Intro from "../components/Intro";
 import MessagesSection from "../components/Messaging";
 import DarkModeToggle from "../components/DarkModeToggle";
+import {useChat} from "./useChat";
 
 export default function Chat() {
 
-    interface Message {
-        role: string;
-        content: string;
-    }
-
-    const [messages, setMessages] = useState<Message[]>([]);
-
+    const {messages, isLoading, error, setError, fetchChatResponse} = useChat();
     const [input, setInput] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
-    const [errorScreen, setErrorScreen] = useState<string | null>(null);
-
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
     const inputRef = useRef<HTMLTextAreaElement>(null);
-
-    const scrollToBottom = () => {
-        if (messagesEndRef.current) {
-            messagesEndRef.current?.scrollIntoView({behavior: 'smooth'});
-        }
-    };
 
     useEffect(() => {
         if (inputRef.current) {
@@ -38,8 +24,10 @@ export default function Chat() {
         }
     }, [messages]);
 
-    const handleCloseError = () => {
-        setErrorScreen('');
+    const scrollToBottom = () => {
+        if (messagesEndRef.current) {
+            messagesEndRef.current?.scrollIntoView({behavior: 'smooth'});
+        }
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -48,53 +36,21 @@ export default function Chat() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (!input.trim()) return;
+        await fetchChatResponse(input);
+        setInput("");
+    };
 
-        const userMessage = {role: 'You', content: input};
-        const chatHistory = [...messages, userMessage];
-        setMessages(chatHistory);
-        setInput('');
-        setIsLoading(true);
-        try {
-            const response = await fetch(`/api/chat`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({history: chatHistory, question: input}),
-            });
-
-            let data
-            if (response.status === 404) {
-                const json = await response.json();
-                data = json['detail'];
-            } else if (!response.ok) {
-                setErrorScreen('AI Assistant responded with an error! Please try again.');
-                setTimeout(() => {
-                    setErrorScreen('');
-                }, 5000);
-            } else {
-                const json = await response.json();
-                data = json['answer'];
-            }
-            if (data) {
-                setErrorScreen('');
-                const botMessage = {role: 'AI', content: String(data)};
-                setMessages([...chatHistory, botMessage]);
-            }
-
-        } catch (error) {
-            setErrorScreen('Failed to get answer from elections AI Assistant: ' + (error as Error).message);
-        } finally {
-            setIsLoading(false);
-        }
+    const handleCloseError = () => {
+        setError(null);
     };
 
     return (
         <div className="h-screen flex flex-col bg-white dark:bg-gray-700">
-            {errorScreen && (
+            {error && (
                 <div
                     className="error-screen mx-auto max-w-3xl w-full bg-red-600 p-4 rounded-lg flex items-center justify-between shadow-lg">
-                    <span className="flex-1">{errorScreen}</span>
+                    <span className="flex-1">{error}</span>
                     <button onClick={handleCloseError}
                             className="text-white font-bold px-2 py-1 bg-transparent rounded-full hover:bg-red-700 transition">
                         X
@@ -117,7 +73,7 @@ export default function Chat() {
                     className="w-full max-w-3xl mx-auto max-[380px]:pl-6 max-[380px]:pr-6 pl-4 pr-4 max-[380px]:pb-4 pb-8 sm:pb-10 max-[950px]:landscape:pb-3"
                     onSubmit={handleSubmit}
                 >
-                    {messages.length == 0 && (
+                    {!messages.length && (
                         <div className="text-center text-black dark:text-white max-[380px]:pb-2 pb-6 sm:pb-8">
                             <h2 className="font-bold max-[380px]:text-sm text-lg md:text-xl"> Ask Away!</h2>
                         </div>
