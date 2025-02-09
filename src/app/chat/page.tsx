@@ -129,6 +129,12 @@ export default function Chat() {
                             value={input}
                             placeholder="Type your own question here"
                             onChange={handleInputChange}
+                            onKeyDown={async (e) => {
+                                if (e.key === "Enter" && !e.shiftKey) {
+                                    e.preventDefault();
+                                    await handleSubmit(e);
+                                }
+                            }}
                         />
                         <button
                             type="submit"
