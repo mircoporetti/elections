@@ -2,7 +2,7 @@ import type {NextConfig} from "next";
 
 const nextConfig: NextConfig = {
     env: {
-        apiBaseUrl: "https://elections-programs.mircoporetti.me",
+        apiBaseUrl: "http://localhost:8000",
     }
 };
 

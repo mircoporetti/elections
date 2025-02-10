@@ -33,7 +33,7 @@ export function useChat() {
             if (response.status === 404) {
                 data = (await response.json())["detail"];
             } else if (!response.ok) {
-                setErrorWithTimeout("AI Assistant responded with an error! Please try again.");
+                setErrorWithTimeout("Der KI-Assistent hat mit einem Fehler geantwortet! Bitte versuche es erneut.");
             } else {
                 data = (await response.json())["answer"];
             }

@@ -75,7 +75,7 @@ export default function Chat() {
                 >
                     {!messages.length && (
                         <div className="text-center text-black dark:text-white max-[380px]:pb-2 pb-6 sm:pb-8">
-                            <h2 className="font-bold max-[380px]:text-sm text-lg md:text-xl"> Ask Away!</h2>
+                            <h2 className="font-bold max-[380px]:text-sm text-lg md:text-xl"> Frag ruhig!</h2>
                         </div>
                     )}
                     <div className="flex w-full items-center relative">
@@ -83,7 +83,7 @@ export default function Chat() {
                             ref={inputRef}
                             className="max-[950px]:landscape:h-10 w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-3xl p-2 pr-14 shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600 resize-none"
                             value={input}
-                            placeholder="Type your own question here"
+                            placeholder="Stelle hier deine eigene Frage"
                             onChange={handleInputChange}
                             onKeyDown={async (e) => {
                                 if (e.key === "Enter" && !e.shiftKey) {
@@ -103,8 +103,7 @@ export default function Chat() {
                     </div>
                     <div
                         className="flex w-full items-center justify-between text-center text-black dark:text-white max-[950px]:landscape:pt-3 pt-5">
-                        <p className="text-xs text-left mx-auto pl-20">Poll-E can make
-                            mistakes.</p>
+                        <p className="text-xs text-left mx-auto pl-20">Poll-E kann Fehler machen.</p>
                         <div className="ml-4">
                             <DarkModeToggle/>
                         </div>

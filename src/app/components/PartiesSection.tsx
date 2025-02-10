@@ -11,7 +11,8 @@ const PartiesSection: React.FC<PartiesSectionProps> = ({onlyTags = false}) => {
             {!onlyTags && <div
                 className="max-[950px]:landscape:hidden flex justify-center items-center dark:bg-gray-700">
                 <div className="text-center text-black dark:text-white">
-                    <p className="text-sm md:text-md">Use the following acronyms when referring to parties:</p>
+                    <p className="text-sm md:text-md">Verwende die folgenden Abkürzungen, wenn du dich auf Parteien beziehst:
+                    </p>
                 </div>
             </div> }
             <div
@@ -33,8 +34,8 @@ const PartiesSection: React.FC<PartiesSectionProps> = ({onlyTags = false}) => {
             {!onlyTags && <div
                 className=" max-[950px]:landscape:hidden flex justify-center items-center pt-8 dark:bg-gray-700">
                 <div className="text-center text-black dark:text-white">
-                    <p className="text-sm text-md">I am still in training, please don’t ask me to compare
-                        parties.</p>
+                    <p className="text-sm text-md">Ich bin noch in der Ausbildung, bitte bitte frage mich nicht, Parteien zu vergleichen.
+                    </p>
                 </div>
             </div>}
         </div>
