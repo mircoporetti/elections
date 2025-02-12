@@ -1,10 +1,14 @@
 import {useState} from "react";
-import {Message} from "../types/message";
+import {Message} from "../../types/message";
+import {useTranslations} from "next-intl";
 
 export function useChat() {
     const [messages, setMessages] = useState<Message[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    const t = useTranslations('Chat');
+
 
     function setErrorWithTimeout(message: string) {
         setError(message);
@@ -33,7 +37,7 @@ export function useChat() {
             if (response.status === 404) {
                 data = (await response.json())["detail"];
             } else if (!response.ok) {
-                setErrorWithTimeout("AI Assistant responded with an error! Please try again.");
+                setErrorWithTimeout(t('assistant-error'));
             } else {
                 data = (await response.json())["answer"];
             }

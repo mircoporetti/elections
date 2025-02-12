@@ -1,0 +1,15 @@
+{
+  "Chat": {
+    "greetings": "Hallo, ich bin Poll-E",
+    "intro1": "Ich bin hier, um dir bei den bevorstehenden deutschen Wahlen im Februar 2025 zu helfen",
+    "intro2": "Wie? Ich bin eine KI, die mit den offiziellen Wahlprogrammen der deutschen Parteien 2025 trainiert wurde.",
+    "parties-tags-description": "Verwende die folgenden Abkürzungen, wenn du auf Parteien verweist:",
+    "parties-tags-disclaimer": "Ich bin noch in der Ausbildung, bitte frage mich nicht, Parteien zu vergleichen.",
+    "ask-away": "Stell deine Frage",
+    "input-placeholder": "Gib hier deine eigene Frage ein",
+    "polle-disclaimer": "Poll-E kann Fehler machen.",
+    "assistant-error": "Der KI-Assistent hat mit einem Fehler geantwortet! Bitte versuche es erneut.",
+    "ai": "Poll-E",
+    "you": "Du"
+  }
+}
