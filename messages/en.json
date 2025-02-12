@@ -1,0 +1,15 @@
+{
+  "Chat": {
+    "greetings": "Hallo, I'm Poll-E",
+    "intro1": "Here to help you with the upcoming German elections of February 2025",
+    "intro2": "How? I am an AI trained with the German parties’ official electoral programs 2025",
+    "parties-tags-description": "Use the following acronyms when referring to parties:",
+    "parties-tags-disclaimer": "I am still in training, please don’t ask me to compare parties.",
+    "ask-away": "Ask Away",
+    "input-placeholder": "Type your own question here",
+    "polle-disclaimer": "Poll-E can make mistakes.",
+    "assistant-error": "AI Assistant responded with an error! Please try again.",
+    "ai": "Poll-E",
+    "you": "You"
+  }
+}
