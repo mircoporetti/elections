@@ -3,13 +3,18 @@
 import { usePathname, useRouter } from "../../i18n/routing";
 import { useLocale } from "next-intl";
 
-export default function LanguageSwitcher() {
+type LanguageSwitcherProps = {
+    onLanguageChange: (locale: string) => void;
+};
+
+export default function LanguageSwitcher({ onLanguageChange }: LanguageSwitcherProps) {
     const router = useRouter();
     const pathname = usePathname();
     const currentLocale = useLocale();
 
     const switchLanguage = (locale: string) => {
         if (locale !== currentLocale) {
+            onLanguageChange(locale); // Trigger the language change in the parent
             router.push(pathname, { locale });
         }
     };

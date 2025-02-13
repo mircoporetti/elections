@@ -38,6 +38,10 @@ export default function Chat() {
         setInput(e.target.value);
     };
 
+    const handleLanguageChange = () => {
+        setInput('')
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!input.trim()) return;
@@ -108,7 +112,7 @@ export default function Chat() {
                     <div
                         className="flex w-full items-center justify-between text-center text-black dark:text-white max-[950px]:landscape:pt-3 pt-5">
                         <div>
-                            <LanguageSwitcher/>
+                            <LanguageSwitcher onLanguageChange={handleLanguageChange}/>
                         </div>
 
                         <div className="flex-grow text-center">
