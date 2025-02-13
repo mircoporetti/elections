@@ -94,11 +94,11 @@ export default function Chat() {
                     <div className="flex w-full items-center relative">
                         <textarea
                             ref={inputRef}
-                            className="max-[950px]:landscape:h-10 w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-3xl p-2 pr-14 shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600 resize-none"
+                            className="max-[950px]:landscape:h-12 w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-3xl p-2 pr-14 pt-6 max-[950px]:landscape:pt-2 max-[380px]:text-sm shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600 resize-none"
                             value={input}
                             placeholder={t('input-placeholder')}
                             onChange={handleInputChange}
-                            onInput={(e) => autoResize(e.target as HTMLTextAreaElement)}  // Handle text area resizing
+                            onInput={(e) => autoResize(e.target as HTMLTextAreaElement)}
                             onKeyDown={async (e) => {
                                 if (e.key === "Enter" && !e.shiftKey) {
                                     e.preventDefault();
