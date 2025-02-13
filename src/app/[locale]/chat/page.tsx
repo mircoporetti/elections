@@ -53,6 +53,11 @@ export default function Chat() {
         setError(null);
     };
 
+    const autoResize = (textarea: HTMLTextAreaElement) => {
+        textarea.style.height = 'auto';
+        textarea.style.height = `${textarea.scrollHeight}px`;
+    };
+
     return (
         <div className="h-screen flex flex-col bg-white dark:bg-gray-700">
             {error && (
@@ -93,6 +98,7 @@ export default function Chat() {
                             value={input}
                             placeholder={t('input-placeholder')}
                             onChange={handleInputChange}
+                            onInput={(e) => autoResize(e.target as HTMLTextAreaElement)}  // Handle text area resizing
                             onKeyDown={async (e) => {
                                 if (e.key === "Enter" && !e.shiftKey) {
                                     e.preventDefault();
@@ -114,11 +120,9 @@ export default function Chat() {
                         <div>
                             <LanguageSwitcher onLanguageChange={handleLanguageChange}/>
                         </div>
-
                         <div className="flex-grow text-center">
                             <p className="text-xs mx-auto pr-8">{t('polle-disclaimer')}</p>
                         </div>
-
                         <div className="ml-4">
                             <DarkModeToggle/>
                         </div>
