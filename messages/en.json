@@ -5,6 +5,7 @@
     "intro2": "How? I am an AI trained with the German parties’ official electoral programs 2025",
     "parties-tags-description": "Use the following acronyms when referring to parties:",
     "parties-tags-disclaimer": "I am still in training, please don’t ask me to compare parties.",
+    "default-tag-input": "What {party} wants to do for the economical crisis?",
     "ask-away": "Ask Away",
     "input-placeholder": "Type your own question here",
     "polle-disclaimer": "Poll-E can make mistakes.",

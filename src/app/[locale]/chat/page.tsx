@@ -66,7 +66,7 @@ export default function Chat() {
                     className="max-w-4xl mx-auto px-4 max-[380px]:py-4 py-6 space-y-4 pb-2 pl-5 pr-5 md:pl-28 md:pr-28">
                     {!messages.length && <Intro/>}
                     <div className="max-[950px]:landscape:mt-0 mt-5 mb-5 md:mb-5 sticky top-0">
-                        <PartiesSection onlyTags={messages.length > 0}/>
+                        <PartiesSection showOnlyTags={messages.length > 0} onTagClick={setInput}/>
                     </div>
                     <MessagesSection messages={messages} isLoading={isLoading}/>
                     <div ref={messagesEndRef}></div>

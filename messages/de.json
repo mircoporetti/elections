@@ -5,6 +5,7 @@
     "intro2": "Wie? Ich bin eine KI, die mit den offiziellen Wahlprogrammen der deutschen Parteien 2025 trainiert wurde.",
     "parties-tags-description": "Verwende die folgenden Abkürzungen, wenn du auf Parteien verweist:",
     "parties-tags-disclaimer": "Ich bin noch in der Ausbildung, bitte frage mich nicht, Parteien zu vergleichen.",
+    "default-tag-input": "Was möchte {party} gegen die Wirtschaftskrise tun?",
     "ask-away": "Stell deine Frage",
     "input-placeholder": "Gib hier deine eigene Frage ein",
     "polle-disclaimer": "Poll-E kann Fehler machen.",
