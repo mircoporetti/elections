@@ -4,16 +4,16 @@ import { useTranslations } from "next-intl";
 
 interface PartiesSectionProps {
     showOnlyTags?: boolean;
-    onTagClick: (text: (previous: string) => string) => void;
+    fillChatInput: (text: (previous: string) => string) => void;
 }
 
-const PartiesSection: React.FC<PartiesSectionProps> = ({showOnlyTags = false,  onTagClick}) => {
+const PartiesSection: React.FC<PartiesSectionProps> = ({showOnlyTags = false,  fillChatInput}) => {
 
     const t = useTranslations('Chat');
 
     const handleTagClick = (party: string) => {
         const text = t("default-tag-input", { party })
-        onTagClick((previous) => previous + (previous ? " " : "") + text);
+        fillChatInput(() => text);
         };
 
         return (
