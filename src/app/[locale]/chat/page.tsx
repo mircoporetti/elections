@@ -34,23 +34,11 @@ export default function Chat() {
         }
     };
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setInput(e.target.value);
-    };
-
-    const handleLanguageChange = () => {
-        setInput('')
-    };
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!input.trim()) return;
         await fetchChatResponse(input);
         setInput("");
-    };
-
-    const handleCloseError = () => {
-        setError(null);
     };
 
     const autoResize = (textarea: HTMLTextAreaElement) => {
@@ -64,7 +52,7 @@ export default function Chat() {
                 <div
                     className="error-screen mx-auto max-w-3xl w-full bg-red-600 p-4 rounded-lg flex items-center justify-between shadow-lg">
                     <span className="flex-1">{error}</span>
-                    <button onClick={handleCloseError}
+                    <button onClick={() => setError(null)}
                             className="text-white font-bold px-2 py-1 bg-transparent rounded-full hover:bg-red-700 transition">
                         X
                     </button>
@@ -97,7 +85,7 @@ export default function Chat() {
                             className="max-[950px]:landscape:h-12 w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white rounded-3xl p-2 pr-14 pt-6 max-[950px]:landscape:pt-2 max-[380px]:text-sm shadow placeholder-gray-600 dark:placeholder-gray-400 focus:outline-none dark:focus:border-gray-600 resize-none"
                             value={input}
                             placeholder={t('input-placeholder')}
-                            onChange={handleInputChange}
+                            onChange={event => setInput(event.target.value)}
                             onInput={(e) => autoResize(e.target as HTMLTextAreaElement)}
                             onKeyDown={async (e) => {
                                 if (e.key === "Enter" && !e.shiftKey) {
@@ -118,7 +106,7 @@ export default function Chat() {
                     <div
                         className="flex w-full items-center justify-between text-center text-black dark:text-white max-[950px]:landscape:pt-3 pt-5">
                         <div>
-                            <LanguageSwitcher onLanguageChange={handleLanguageChange}/>
+                            <LanguageSwitcher onLanguageChange={() => setInput('') }/>
                         </div>
                         <div className="flex-grow text-center">
                             <p className="text-xs mx-auto pr-8">{t('polle-disclaimer')}</p>
