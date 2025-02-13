@@ -1,5 +1,6 @@
 import React from 'react';
 import {useTranslations} from "next-intl";
+import ReactMarkdown from 'react-markdown';
 
 interface Message {
     role: string;
@@ -30,15 +31,15 @@ const Messaging: React.FC<MessagingProps> = ({messages, isLoading}) => {
                             }`}
                         >
                             <div className="font-bold">{t(`${role}`)}</div>
-                            <p className="max-[950px]:landscape:text-sm break-words text-left max-[380px]:text-xs text-sm md:text-lg">
-                                {message.content}
-                            </p>
+                            <div className="max-[950px]:landscape:text-sm break-words text-left max-[380px]:text-xs text-sm md:text-lg">
+                                <ReactMarkdown>{message.content}</ReactMarkdown>
+                            </div>
                         </div>
                     );
                 })}
             </div>
             {isLoading && (
-                <div className="flex flex-col mx-auto mt-4t">
+                <div className="flex flex-col mx-auto mt-4">
                     <div className="font-bold text-black dark:text-white">Poll-E</div>
                     <div
                         className="pt-2 border-4 border-t-4 border-gray-600 dark:border-white border-dotted w-8 h-8 rounded-full animate-spin mt-2 self-start"></div>
