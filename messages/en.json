@@ -12,5 +12,11 @@
     "assistant-error": "AI Assistant responded with an error! Please try again.",
     "ai": "Poll-E",
     "you": "You"
+  },
+  "Consent": {
+    "title": "Always Think for Yourself!",
+    "content1": "Poll-E chatbot uses AI to provide answers based on official public documents of political parties.",
+    "content2": "But Hey! Mistakes can happen, and things might not always be 100% accurate. Always verify information from official sources.\n",
+    "Continue": "Accept & Continue"
   }
 }

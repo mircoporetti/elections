@@ -12,5 +12,11 @@
     "assistant-error": "Der KI-Assistent hat mit einem Fehler geantwortet! Bitte versuche es erneut.",
     "ai": "Poll-E",
     "you": "Du"
+  },
+  "Consent": {
+    "title": "Denke Immer Selbstständig!",
+    "content1": "Der Poll-E Chatbot nutzt KI, um Antworten basierend auf offiziellen öffentlichen Dokumenten politischer Parteien zu liefern.",
+    "content2": "Aber Hey! Fehler können passieren, und Dinge sind vielleicht nicht immer zu 100% genau. Verifiziere Informationen immer bei offiziellen Quellen.",
+    "Continue": "Akzeptieren & Weiter"
   }
 }
