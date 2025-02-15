@@ -99,7 +99,9 @@ export default function Chat() {
                             className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white text-white rounded-full p-3 max-[950px]:landscape:p-2 shadow focus:outline-none"
                         >
                             <ArrowUpIcon
-                                className="h-6 w-6 max-[950px]:landscape:h-4 max-[950px]:landscape:w-4 text-gray-400 dark:text-gray-700"
+                                className={`h-6 w-6 max-[950px]:landscape:h-4 max-[950px]:landscape:w-4 ${
+                                    input.length > 0 ? "text-black dark:text-gray-700" : "text-gray-400"
+                                }`}
                             />
                         </button>
                     </div>
