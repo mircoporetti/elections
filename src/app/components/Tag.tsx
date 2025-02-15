@@ -12,7 +12,7 @@ const Tag: React.FC<TagProps> = ({ text, color = "cadetblue", extraText, onClick
         <span
             className="cursor-pointer max-[380px]:px-0 px-1 sm:px-3 py-2 ml-2 border rounded-xl text-black bg-white font-bold text-sm md:text-lg max-[950px]:landscape:text-xs"
             style={{
-                boxShadow: `2px 2px 5px ${color}`,
+                boxShadow: `2px 3px 1px ${color}`,
                 borderColor: color,
             }}
             onClick={() => onClick?.(text)}

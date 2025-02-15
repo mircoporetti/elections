@@ -27,15 +27,15 @@ const PartiesSection: React.FC<PartiesSectionProps> = ({showOnlyTags = false,  f
             <div
                 className="max-[950px]:landscape:pt-2 flex justify-center items-center max-[380px]:pt-4 pt-8 dark:bg-gray-700">
                 <div className="text-center">
-                    <Tag text="SPD" color="red" onClick={handleTagClick}/> <Tag text="CDU" color="blue" onClick={handleTagClick}/> <Tag text="FDP"
-                                                                                      color="yellow" onClick={handleTagClick}/> <Tag
-                    text="AFD" color="cadetblue" onClick={handleTagClick}/> <Tag text="BSW" color="orange" onClick={handleTagClick}/>
+                    <Tag text="SPD" color="#D02323" onClick={handleTagClick}/> <Tag text="CDU" color="#000000" onClick={handleTagClick}/> <Tag text="FDP"
+                                                                                      color="#FFED00" onClick={handleTagClick}/> <Tag
+                    text="AFD" color="#009EE0" onClick={handleTagClick}/> <Tag text="BSW" color="#FFD700" onClick={handleTagClick}/>
                 </div>
             </div>
             <div
                 className="flex justify-center items-center pt-8 dark:bg-gray-700">
                 <div className="text-center">
-                    <Tag text="DG" extraText="(Die Grüne)" color="green" onClick={handleTagClick}/> <Tag text="DL"
+                    <Tag text="DG" extraText="(Die Grüne)" color="#64A12D" onClick={handleTagClick}/> <Tag text="DL"
                                                                                 extraText="(Die Linke)"
                                                                                 color="#BE0028" onClick={handleTagClick}/>
                 </div>
