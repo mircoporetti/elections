@@ -43,7 +43,7 @@ export default function DarkModeToggle() {
             <div className="w-8 h-4 flex items-center bg-gray-700 dark:bg-white rounded-full p-1 transition duration-300">
                 <div
                     className={`w-3.5 h-2 bg-white dark:bg-black rounded-full shadow-md transform ${
-                        darkMode ? "translate-x-4" : "translate-x-0"
+                        darkMode ? "translate-x-3" : "translate-x-0"
                     } transition duration-300`}
                 />
             </div>
