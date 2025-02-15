@@ -9,7 +9,8 @@
     "ask-away": "Ask Away",
     "input-placeholder": "Type your own question here",
     "polle-disclaimer": "Poll-E can make mistakes.",
-    "assistant-error": "AI Assistant responded with an error! Please try again.",
+    "generic-error": "AI Assistant responded with an error! Please try again.",
+    "too-many-requests-error": "I received too many requests today. Time to rest! Please try again tomorrow.",
     "ai": "Poll-E",
     "you": "You"
   },

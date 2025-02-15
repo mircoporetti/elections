@@ -36,8 +36,10 @@ export function useChat() {
             let data;
             if (response.status === 404) {
                 data = (await response.json())["detail"];
+            } else if (response.status === 429) {
+                data =  t('too-many-requests-error');
             } else if (!response.ok) {
-                setErrorWithTimeout(t('assistant-error'));
+                setErrorWithTimeout(t('generic-error'));
             } else {
                 data = (await response.json())["answer"];
             }

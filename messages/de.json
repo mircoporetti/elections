@@ -9,7 +9,8 @@
     "ask-away": "Stell deine Frage",
     "input-placeholder": "Gib hier deine eigene Frage ein",
     "polle-disclaimer": "Poll-E kann Fehler machen.",
-    "assistant-error": "Der KI-Assistent hat mit einem Fehler geantwortet! Bitte versuche es erneut.",
+    "generic-error": "Der KI-Assistent hat mit einem Fehler geantwortet! Bitte versuche es erneut.",
+    "too-many-requests-error": "Ich habe heute zu viele Anfragen erhalten. Zeit für eine Pause! Bitte versuche es morgen erneut.",
     "ai": "Poll-E",
     "you": "Du"
   },
