@@ -61,10 +61,19 @@ export default function Chat() {
             <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
                 <div
                     className="max-w-4xl mx-auto px-4 max-[380px]:py-4 py-6 space-y-4 pb-2 pl-5 pr-5 md:pl-28 md:pr-28">
-                    {!messages.length && <Intro/>}
-                    <div className="max-[950px]:landscape:mt-0 mt-5 mb-5 md:mb-5 sticky top-0">
+                    {!messages.length &&
+                        <div className="max-[380px]:mb-4 mb-10 sm:mb-14 md:mb-20 xl:mb-28">
+                            <Intro/>
+                        </div>
+                    }
+                    <div
+                        className={`max-[950px]:landscape:mt-0 mb-5 md:mb-5 ${
+                            messages.length > 0 ? "fixed top-0 left-0 w-full bg-white dark:bg-gray-700 z-50" : "sticky top-0"
+                        }`}
+                    >
                         <PartiesSection showOnlyTags={messages.length > 0} fillChatInput={setInput}/>
                     </div>
+                    {messages.length > 0 && <div className="max-[950px]:landscape:h-[6rem] h-[9rem]"></div>}
                     <MessagesSection messages={messages} isLoading={isLoading}/>
                     <div ref={messagesEndRef}></div>
                 </div>
@@ -108,7 +117,7 @@ export default function Chat() {
                     <div
                         className="flex w-full items-center justify-between text-center text-black dark:text-white max-[950px]:landscape:pt-3 pt-5">
                         <div>
-                            <LanguageSwitcher onLanguageChange={() => setInput('') }/>
+                            <LanguageSwitcher onLanguageChange={() => setInput('')}/>
                         </div>
                         <div className="flex-grow text-center">
                             <p className="text-xs mx-auto pr-8">{t('polle-disclaimer')}</p>

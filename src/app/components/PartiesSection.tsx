@@ -17,7 +17,7 @@ const PartiesSection: React.FC<PartiesSectionProps> = ({showOnlyTags = false,  f
         };
 
         return (
-        <div className={`pl-1 pr-1 md:pl-8 md:pr-8 max-[950px]:landscape:mt-0 max-[380px]:mt-6 mt-12 md:mt-14 xl:mt-28 bg-white dark:bg-gray-700 ${showOnlyTags ? "max-[950px]:landscape:pb-5 pb-10" : ""}`}>
+        <div className={`pl-1 pr-1 md:pl-8 md:pr-8 max-[950px]:landscape:mt-0 max-[380px]:mt-6 bg-white dark:bg-gray-700 ${showOnlyTags ? "max-[950px]:landscape:pb-5 pb-6" : ""}`}>
             {!showOnlyTags && <div
                 className="max-[950px]:landscape:hidden flex justify-center items-center dark:bg-gray-700">
                 <div className="text-center text-black dark:text-white">
@@ -25,7 +25,7 @@ const PartiesSection: React.FC<PartiesSectionProps> = ({showOnlyTags = false,  f
                 </div>
             </div> }
             <div
-                className="max-[950px]:landscape:pt-2 flex justify-center items-center max-[380px]:pt-4 pt-8 dark:bg-gray-700">
+                className="max-[950px]:landscape:pt-6 flex justify-center items-center max-[380px]:pt-4 pt-8 dark:bg-gray-700">
                 <div className="text-center">
                     <Tag text="SPD" color="#D02323" onClick={handleTagClick}/> <Tag text="CDU" color="#000000" onClick={handleTagClick}/> <Tag text="FDP"
                                                                                       color="#FFED00" onClick={handleTagClick}/> <Tag
