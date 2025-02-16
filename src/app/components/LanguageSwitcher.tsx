@@ -14,7 +14,7 @@ export default function LanguageSwitcher({ onLanguageChange }: LanguageSwitcherP
 
     const switchLanguage = (locale: string) => {
         if (locale !== currentLocale) {
-            onLanguageChange(locale); // Trigger the language change in the parent
+            onLanguageChange(locale);
             router.push(pathname, { locale });
         }
     };
@@ -25,7 +25,7 @@ export default function LanguageSwitcher({ onLanguageChange }: LanguageSwitcherP
                 <button
                     key={locale}
                     onClick={() => switchLanguage(locale)}
-                    className={`px-2 py-1 text-xs rounded-full transition font-medium
+                    className={`px-1 py-0 text-xs rounded-full transition font-medium
                         ${
                         locale === currentLocale
                             ? "bg-blue-600 text-white shadow"
