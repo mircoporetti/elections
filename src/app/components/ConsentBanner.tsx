@@ -27,7 +27,7 @@ export default function ConsentBanner() {
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 px-4">
             <div className="bg-white shadow-lg border border-gray-200 rounded-xl p-6 text-sm text-gray-700 w-full max-w-lg">
                 <h2 className="text-center font-bold text-lg mb-4">
-                    🤖 {t('title')} 🧠
+                    {t('title')} 😉
                 </h2>
                 <p>
                     {t('content1')}

@@ -15,9 +15,9 @@
     "you": "Du"
   },
   "Consent": {
-    "title": "Denke Immer Selbstständig!",
-    "content1": "Der Poll-E Chatbot nutzt KI, um Antworten basierend auf offiziellen öffentlichen Dokumenten politischer Parteien zu liefern.",
-    "content2": "Aber Hey! Fehler können passieren, und Dinge sind vielleicht nicht immer zu 100% genau. Verifiziere Informationen immer bei offiziellen Quellen.",
-    "Continue": "Akzeptieren & Weiter"
+    "title": "KI hilft, aber du solltest immer überprüfen!",
+    "content1": "Der Poll-E-Chatbot verwendet KI, um Antworten auf Grundlage offizieller öffentlicher Dokumente von politischen Parteien zu generieren, aber diese sind möglicherweise nicht immer genau.",
+    "content2": "Wir empfehlen, Informationen aus offiziellen Quellen zu überprüfen.",
+    "Continue": "Ich nehme das zur Kenntnis. Lass mich es versuchen!"
   }
 }

@@ -15,9 +15,9 @@
     "you": "You"
   },
   "Consent": {
-    "title": "Always Think for Yourself!",
-    "content1": "Poll-E chatbot uses AI to provide answers based on official public documents of political parties.",
-    "content2": "But Hey! Mistakes can happen, and things might not always be 100% accurate. Always verify information from official sources.\n",
-    "Continue": "Accept & Continue"
+    "title": "AI helps, but you should always verify!",
+    "content1": "Poll-E chatbot uses AI to generate responses based on official public documents from political parties but they may not always be accurate.",
+    "content2": "We recommend verifying information from official sources.",
+    "Continue": "I acknowledge that. Let me try!"
   }
 }
