@@ -62,7 +62,7 @@ export default function Chat() {
                 <div
                     className="max-w-4xl mx-auto px-4 max-[380px]:py-4 py-6 space-y-4 pb-2 pl-5 pr-5 md:pl-28 md:pr-28">
                     {!messages.length && (
-                        <div className="max-[380px]:mb-4 mb-6 sm:mb-14 md:mb-20 xl:mb-28">
+                        <div className="max-[380px]:mb-4 mb-6 sm:mb-7 md:mb-10 xl:mb-14">
                             <Intro/>
                         </div>
                     )}
@@ -78,12 +78,12 @@ export default function Chat() {
             </div>
             <div className="bg-white dark:bg-gray-700">
                 {!messages.length && (
-                    <div className="text-center text-black dark:text-white max-[380px]:pb-2 pb-4 sm:pb-8">
+                    <div className="text-center text-black dark:text-white max-[380px]:pb-2 pb-2 sm:pb-4">
                         <h2 className="font-bold max-[380px]:text-sm text-lg md:text-xl">{t('ask-away')}</h2>
                     </div>
                 )}
                 <form
-                    className="w-full max-w-3xl mx-auto max-[380px]:pl-6 max-[380px]:pr-6 pl-4 pr-4 max-[380px]:pb-4 pb-2 sm:pb-10 max-[950px]:landscape:pb-3"
+                    className="w-full max-w-3xl mx-auto max-[380px]:pl-6 max-[380px]:pr-6 pl-4 pr-4 max-[380px]:pb-4 pb-4 sm:pb-6 max-[950px]:landscape:pb-3"
                     onSubmit={handleSubmit}>
                     <div className="flex w-full items-center relative">
                 <textarea
@@ -113,6 +113,19 @@ export default function Chat() {
                             <p className="text-xs mx-auto pr-3">{t('polle-disclaimer')}</p>
                         </div>
                         <div className="ml-4"><DarkModeToggle/></div>
+                    </div>
+                    <div className="flex-grow text-center">
+                        <p className="text-xs mx-auto pr-3 font-bold pt-2">
+                            {t('copyrights')} |{' '}
+                            <a
+                                href="https://linkedin.com/in/mirco-poretti-197282b4"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-500 hover:underline"
+                            >
+                                LinkedIn
+                            </a>
+                        </p>
                     </div>
                 </form>
             </div>
