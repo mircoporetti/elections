@@ -115,7 +115,7 @@ export default function Chat() {
                         <div className="ml-4"><DarkModeToggle/></div>
                     </div>
                     <div className="flex-grow text-center">
-                        <p className="text-xs mx-auto pr-3 font-bold pt-2">
+                        <p className="text-xs mx-auto pr-3 font-bold pt-2 text-black dark:text-white">
                             {t('copyrights')} |{' '}
                             <a
                                 href="https://linkedin.com/in/mirco-poretti-197282b4"
