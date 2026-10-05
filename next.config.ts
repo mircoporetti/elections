@@ -6,7 +6,7 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
     env: {
-        apiBaseUrl: "https://elections-assistant.mircoporetti.me",
+        apiBaseUrl: process.env.API_BASE_URL ?? "https://elections-assistant.mircoporetti.me",
     }
 };
 

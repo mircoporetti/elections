@@ -9,6 +9,7 @@ import DarkModeToggle from "../../components/DarkModeToggle";
 import {useTranslations} from 'next-intl';
 import {useChat} from "./useChat";
 import LanguageSwitcher from "../../components/LanguageSwitcher";
+import {Link} from "../../../i18n/routing";
 
 export default function Chat() {
 
@@ -80,6 +81,9 @@ export default function Chat() {
                 {!messages.length && (
                     <div className="text-center text-black dark:text-white max-[380px]:pb-2 pb-2 sm:pb-4">
                         <h2 className="font-bold max-[380px]:text-sm text-lg md:text-xl">{t('ask-away')}</h2>
+                        <Link href="/quiz" className="text-sm text-blue-600 dark:text-blue-300 hover:underline">
+                            {t('to-quiz')}
+                        </Link>
                     </div>
                 )}
                 <form

@@ -16,12 +16,55 @@
     "generic-error": "Der KI-Assistent hat mit einem Fehler geantwortet! Bitte versuche es erneut.",
     "too-many-requests-error": "Ich habe heute zu viele Anfragen erhalten. Zeit für eine Pause! Bitte versuche es morgen erneut.",
     "ai": "Poll-E",
-    "you": "Du"
+    "you": "Du",
+    "to-quiz": "Noch unsicher? Mach das Partei-Quiz →"
   },
   "Consent": {
     "title": "KI hilft, aber du solltest immer überprüfen!",
     "content1": "Der Poll-E-Chatbot verwendet KI, um Antworten auf Grundlage offizieller öffentlicher Dokumente von politischen Parteien zu generieren, aber diese sind möglicherweise nicht immer genau.",
     "content2": "Wir empfehlen, Informationen aus offiziellen Quellen zu überprüfen.",
     "Continue": "Ich nehme das zur Kenntnis. Lass mich es versuchen!"
+  },
+  "Quiz": {
+    "title": "Welche Partei passt zu dir?",
+    "intro": "Beantworte 30 Thesen aus den Wahlprogrammen 2025. Am Ende siehst du, wie sehr deine Antworten mit dem Programm jeder Partei übereinstimmen.",
+    "progress": "These {current} von {total}",
+    "answer-agree": "Stimme zu",
+    "answer-neutral": "Neutral",
+    "answer-disagree": "Stimme nicht zu",
+    "answer-skip": "Überspringen",
+    "back": "Zurück",
+    "weight-toggle": "These doppelt gewichten",
+    "weighted": "doppelt gewichtet",
+    "loading": "Thesen werden geladen…",
+    "calculating": "Ergebnis wird berechnet…",
+    "results-title": "Dein Ergebnis",
+    "results-explanation": "Wie sehr deine Antworten mit dem Wahlprogramm jeder Partei übereinstimmen. Thesen, zu denen ein Programm nichts sagt, werden für diese Partei nicht gezählt.",
+    "compared-on": "verglichen anhand von {count} {count, plural, one {These} other {Thesen}}",
+    "results-disclaimer": "Dies ist keine Wahlempfehlung. Die Positionen wurden mit KI-Hilfe aus den Wahlprogrammen abgeleitet und von Hand geprüft; die Parteien haben die Thesen nicht selbst beantwortet.",
+    "comparison-title": "Antworten vergleichen",
+    "your-answer": "Deine Antwort",
+    "position-agree": "Stimmt zu",
+    "position-neutral": "Neutral",
+    "position-disagree": "Stimmt nicht zu",
+    "position-not_addressed": "Nicht im Programm",
+    "restart": "Neu starten",
+    "to-chat": "Stattdessen Poll-E eine Frage stellen →",
+    "close": "Schließen",
+    "disclaimer": "Basiert auf den Wahlprogrammen, kann Fehler enthalten",
+    "generic-error": "Beim Laden des Quiz ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+    "areas": {
+      "migration": "Migration",
+      "economy-finance": "Wirtschaft & Finanzen",
+      "labour-social": "Arbeit & Soziales",
+      "housing": "Wohnen",
+      "foreign-defence": "Außen & Verteidigung",
+      "europe": "Europa",
+      "energy-climate": "Energie & Klima",
+      "transport": "Verkehr",
+      "society": "Gesellschaft",
+      "democracy": "Demokratie",
+      "security-digital": "Sicherheit & Digitales"
+    }
   }
 }

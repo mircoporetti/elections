@@ -16,12 +16,55 @@
     "generic-error": "AI Assistant responded with an error! Please try again.",
     "too-many-requests-error": "I received too many requests today. Time to rest! Please try again tomorrow.",
     "ai": "Poll-E",
-    "you": "You"
+    "you": "You",
+    "to-quiz": "Not sure yet? Take the party quiz →"
   },
   "Consent": {
     "title": "AI helps, but you should always verify!",
     "content1": "Poll-E chatbot uses AI to generate responses based on official public documents from political parties but they may not always be accurate.",
     "content2": "We recommend verifying information from official sources.",
     "Continue": "I acknowledge that. Let me try!"
+  },
+  "Quiz": {
+    "title": "Which party matches your views?",
+    "intro": "Answer 30 statements from the 2025 election programs. At the end you'll see how closely your answers match each party's manifesto.",
+    "progress": "Statement {current} of {total}",
+    "answer-agree": "Agree",
+    "answer-neutral": "Neutral",
+    "answer-disagree": "Disagree",
+    "answer-skip": "Skip",
+    "back": "Back",
+    "weight-toggle": "Count this statement double",
+    "weighted": "counted double",
+    "loading": "Loading the statements…",
+    "calculating": "Calculating your results…",
+    "results-title": "Your results",
+    "results-explanation": "How closely your answers match each party's manifesto. Statements a manifesto doesn't address are left out for that party.",
+    "compared-on": "compared on {count} {count, plural, one {statement} other {statements}}",
+    "results-disclaimer": "This is not a voting recommendation. Positions were derived from the manifestos with AI help and reviewed by hand; the parties did not answer the statements themselves.",
+    "comparison-title": "Compare your answers",
+    "your-answer": "Your answer",
+    "position-agree": "Agrees",
+    "position-neutral": "Neutral",
+    "position-disagree": "Disagrees",
+    "position-not_addressed": "Not addressed",
+    "restart": "Start again",
+    "to-chat": "Ask Poll-E a question instead →",
+    "close": "Close",
+    "disclaimer": "Based on the parties' manifestos, may contain mistakes",
+    "generic-error": "Something went wrong loading the quiz. Please try again.",
+    "areas": {
+      "migration": "Migration",
+      "economy-finance": "Economy & Finance",
+      "labour-social": "Labour & Social",
+      "housing": "Housing",
+      "foreign-defence": "Foreign & Defence",
+      "europe": "Europe",
+      "energy-climate": "Energy & Climate",
+      "transport": "Transport",
+      "society": "Society",
+      "democracy": "Democracy",
+      "security-digital": "Security & Digital"
+    }
   }
 }
