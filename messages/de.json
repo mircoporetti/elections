@@ -27,7 +27,7 @@
   },
   "Quiz": {
     "title": "Welche Partei passt zu dir?",
-    "intro": "Beantworte 30 Thesen aus den Wahlprogrammen 2025. Am Ende siehst du, wie sehr deine Antworten mit dem Programm jeder Partei übereinstimmen.",
+    "intro": "Beantworte 30 Thesen aus den Wahlprogrammen 2025. Am Ende siehst du, wie sehr deine Antworten mit dem Programm jeder Partei übereinstimmen. Dies ist ein Vergleich zur Information, keine Wahlempfehlung.",
     "progress": "These {current} von {total}",
     "answer-agree": "Stimme zu",
     "answer-neutral": "Neutral",

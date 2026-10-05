@@ -27,7 +27,7 @@
   },
   "Quiz": {
     "title": "Which party matches your views?",
-    "intro": "Answer 30 statements from the 2025 election programs. At the end you'll see how closely your answers match each party's manifesto.",
+    "intro": "Answer 30 statements from the 2025 election programs. At the end you'll see how closely your answers match each party's manifesto. This is a comparison for information only, not a voting recommendation.",
     "progress": "Statement {current} of {total}",
     "answer-agree": "Agree",
     "answer-neutral": "Neutral",

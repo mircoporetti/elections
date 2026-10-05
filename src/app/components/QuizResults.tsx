@@ -24,6 +24,7 @@ const QuizResults: React.FC<QuizResultsProps> = ({results, compared, onRestart})
             <div className="text-center">
                 <h1 className="font-bold text-2xl">{t('results-title')}</h1>
                 <p className="text-sm mt-2">{t('results-explanation')}</p>
+                <p className="text-sm mt-2 font-bold">{t('results-disclaimer')}</p>
             </div>
 
             <ol className="flex flex-col gap-3" aria-label={t('results-title')}>
@@ -50,8 +51,6 @@ const QuizResults: React.FC<QuizResultsProps> = ({results, compared, onRestart})
                     </li>
                 ))}
             </ol>
-
-            <p className="text-xs text-center">{t('results-disclaimer')}</p>
 
             <div>
                 <h2 className="font-bold text-lg mb-2">{t('comparison-title')}</h2>
